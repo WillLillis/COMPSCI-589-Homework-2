@@ -10,7 +10,7 @@ from random import randrange
 
 def main():
     g_laplace_smooth = True # global flag to indicate whether we're using Laplace Smoothing or not
-    g_alpha = 0.1
+    g_alpha = 10
 
     # programmer's choice...
     train_pos_perc = 1.0
@@ -179,10 +179,8 @@ def main():
                 if word not in used: # avoid double counting...
                     used[word] = True 
                     if word in vocab_counts:
-                        if vocab_counts[word][0] > 0:
-                            pos_prob += log2(numpy.longdouble((vocab_counts[word][0] + g_alpha) / (vocab_total_pos + (g_alpha * len(vocab))))) # Product: Pr(w_k | y_0) 
-                        if vocab_counts[word][1] > 0:
-                            neg_prob += log2(numpy.longdouble((vocab_counts[word][1] + g_alpha) / (vocab_total_neg + (g_alpha * len(vocab))))) # Product: Pr(w_k | y_1)
+                        pos_prob += log2(numpy.longdouble((vocab_counts[word][0] + g_alpha) / (vocab_total_pos + (g_alpha * len(vocab))))) # Product: Pr(w_k | y_0) 
+                        neg_prob += log2(numpy.longdouble((vocab_counts[word][1] + g_alpha) / (vocab_total_neg + (g_alpha * len(vocab))))) # Product: Pr(w_k | y_1)
                     else:
                         pos_prob += log2(numpy.longdouble(g_alpha / (vocab_total_pos + (g_alpha * len(vocab))))) # Product: Pr(w_k | y_0)
                         neg_prob += log2(numpy.longdouble(g_alpha / (vocab_total_neg + (g_alpha * len(vocab))))) # Product: Pr(w_k | y_1)
@@ -228,10 +226,8 @@ def main():
                  if word not in used: # avoid double counting...
                     used[word] = True 
                     if word in vocab_counts:
-                        if vocab_counts[word][0] > 0:
-                            pos_prob += log2(numpy.longdouble((vocab_counts[word][0] + g_alpha) / (vocab_total_pos + (g_alpha * len(vocab))))) # Product: Pr(w_k | y_0) 
-                        if vocab_counts[word][1] > 0:
-                            neg_prob += log2(numpy.longdouble((vocab_counts[word][1] + g_alpha) / (vocab_total_neg + (g_alpha * len(vocab))))) # Product: Pr(w_k | y_1)
+                        pos_prob += log2(numpy.longdouble((vocab_counts[word][0] + g_alpha) / (vocab_total_pos + (g_alpha * len(vocab))))) # Product: Pr(w_k | y_0) 
+                        neg_prob += log2(numpy.longdouble((vocab_counts[word][1] + g_alpha) / (vocab_total_neg + (g_alpha * len(vocab))))) # Product: Pr(w_k | y_1)
                     else:
                         pos_prob += log2(numpy.longdouble(g_alpha / (vocab_total_pos + (g_alpha * len(vocab))))) # Product: Pr(w_k | y_0)
                         neg_prob += log2(numpy.longdouble(g_alpha / (vocab_total_neg + (g_alpha * len(vocab))))) # Product: Pr(w_k | y_1)
