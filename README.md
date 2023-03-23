@@ -2,6 +2,8 @@
 
 The code's dependencies are the ``utils.py`` file, the ``log2`` function from the ``math`` module, ``numpy`` (for its extended precision floating point types), and ``randrange`` function from the ``random`` module.
 
+-While I am including the ``utils.py`` file in my submission, I am not claiming the contents of the file as my own.
+
 Each run of the code evaluates both the naive and "log trick" implementation of the naive bayes algorithm.
 
 Other aspects of the experiments can be altered via the variables at the top of ``main()``.
