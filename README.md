@@ -1,6 +1,6 @@
 ﻿My code can be run via the command ``python3 src.py``. The program takes no additional command line arguments.
 
-The code's dependencies are the ``utils.py`` file, the ``log2`` function from the ``math`` module, ``numpy`` (for its extended precision floating point types), and ``randrange`` function from the ``random`` module.
+The code's dependencies are the ``utils.py`` file, the ``log2`` function from the ``math`` module, ``numpy`` (for its extended precision floating point types), and the ``randrange`` function from the ``random`` module.
 
 -While I am including the ``utils.py`` file in my submission, I am not claiming the contents of the file as my own.
 
